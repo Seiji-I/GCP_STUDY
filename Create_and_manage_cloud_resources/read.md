@@ -47,7 +47,7 @@ INSTANCE_TEMPLATE_NAME="lb-backend-template"
 gcloud compute instance-templates create $INSTANCE_TEMPLATE_NAME \
    --network=default \
    --subnet=default \
-   --tags=allow-health-check \
+   --tags=allow-health-check
 ```
 
 2. Create a target pool and 2 nginx instances
