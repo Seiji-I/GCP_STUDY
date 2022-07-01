@@ -11,7 +11,7 @@ gcloud config set compute/region $REGION
 
 # Create a instance for your project
 ```
-INSTANCE_NAME="my-instance"
+INSTANCE_NAME="*****"
 MACHINE_TYPE="f1-micro"
 
 gcloud compute instances create $INSTANCE_NAME --machine-type=$MACHINE_TYPE
@@ -25,7 +25,7 @@ CONTAINER_NAME="hello-app"
 
 CONTAINER_IMAGE="gcr.io/google-samples/hello-app:2.0"
 
-PORT=8080
+PORT=*****
 
 gcloud container clusters create $CLUSTER_NAME
 
@@ -63,7 +63,6 @@ INSTANCE2_NAME="www2"
 gcloud compute instances create $INSTANCE1_NAME \
   --image-family debian-9 \
   --image-project debian-cloud \
-  --zone us-central1-a \
   --tags network-lb-tag \
   --metadata startup-script="#! / bin / bash
     apt-get update
@@ -73,7 +72,6 @@ gcloud compute instances create $INSTANCE1_NAME \
 gcloud compute instances create $INSTANCE2_NAME \
   --image-family debian-9 \
   --image-project debian-cloud \
-  --zone us-central1-a \
   --tags network-lb-tag \
   --metadata startup-script="#! / bin / bash
     apt-get update
