@@ -11,7 +11,7 @@ gcloud config set compute/region $REGION
 
 # Create a instance for your project
 ```
-INSTANCE_NAME="my_instance"
+INSTANCE_NAME="my-instance"
 MACHINE_TYPE="f1-micro"
 
 gcloud compute instances create $INSTANCE_NAME --machine-type=$MACHINE_TYPE
@@ -70,7 +70,7 @@ gcloud compute instances create $INSTANCE1_NAME \
     apt-get install -y nginx
     service nginx start"
     
-gcloud compute instances create INSTANCE2_NAME \
+gcloud compute instances create $INSTANCE2_NAME \
   --image-family debian-9 \
   --image-project debian-cloud \
   --zone us-central1-a \
@@ -80,7 +80,7 @@ gcloud compute instances create INSTANCE2_NAME \
     apt-get install -y nginx
     service nginx start"
     
-gcloud compute target-pools add-instances $TARGET_POOL_NAME --instances INSTANCE1_NAME,INSTANCE2_NAME
+gcloud compute target-pools add-instances $TARGET_POOL_NAME --instances $INSTANCE1_NAME,$INSTANCE2_NAME
 ```
 
 3. Create a managed instance group.
