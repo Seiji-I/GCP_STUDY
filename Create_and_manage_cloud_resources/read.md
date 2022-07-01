@@ -12,7 +12,7 @@ gcloud config set compute/region $REGION
 # Create a instance for your project
 ```
 INSTANCE_NAME="my_instance"
-MACHINE_TYPE="n1-f1-micro"
+MACHINE_TYPE="f1-micro"
 
 gcloud compute instances create $INSTANCE_NAME --machine-type=$MACHINE_TYPE
 ```
