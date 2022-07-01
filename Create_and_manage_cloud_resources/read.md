@@ -91,7 +91,7 @@ gcloud compute instance-groups managed create $INSTANCE_GROUP_NAME \
 
 4. Firewall rule Create a firewall rule named to allow traffic (TCP port 80)
 ```
-FIREWALL_RULE_NAME="www-firewall-network-lb"
+FIREWALL_RULE_NAME="*****"
 
 gcloud compute firewall-rules create $FIREWALL_RULE_NAME \
     --network=default \
