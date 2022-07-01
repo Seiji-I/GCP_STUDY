@@ -1,8 +1,8 @@
 # Set the default region and zone for all resources
 ```
-ZONE="east1-b"
+ZONE="us-east1-b"
 
-REGION="east1"
+REGION="us-east1"
 
 gcloud config set compute/zone $ZONE
 
@@ -27,9 +27,9 @@ CONTAINER_IMAGE="gcr.io/google-samples/hello-app:2.0"
 
 PORT=8080
 
-gcloud container clusters create $CLUSTER-NAME
+gcloud container clusters create $CLUSTER_NAME
 
-gcloud container clusters get-credentials $CLUSTER-NAME
+gcloud container clusters get-credentials $CLUSTER_NAME
 
 kubectl create deployment $CONTAINER_NAME --image=$CONTAINER_IMAGE
 
