@@ -48,37 +48,20 @@ gcloud compute instance-templates create $INSTANCE_TEMPLATE_NAME \
    --network=default \
    --subnet=default \
    --tags=allow-health-check
+   --metadata=startup-script="  --image-family debian-9 \
+  --image-project debian-cloud \
+  --tags network-lb-tag \
+  --metadata startup-script="#! / bin / bash
+    apt-get update
+    apt-get install -y nginx
+    service nginx start"
 ```
 
-2. Create a target pool and 2 nginx instances
+2. Create a target pool
 ```
 TARGET_POOL_NAME="www-pool"
 
 gcloud compute target-pools create $TARGET_POOL_NAME
-
-INSTANCE1_NAME="www1"
-
-INSTANCE2_NAME="www2"
-
-gcloud compute instances create $INSTANCE1_NAME \
-  --image-family debian-9 \
-  --image-project debian-cloud \
-  --tags network-lb-tag \
-  --metadata startup-script="#! / bin / bash
-    apt-get update
-    apt-get install -y nginx
-    service nginx start"
-    
-gcloud compute instances create $INSTANCE2_NAME \
-  --image-family debian-9 \
-  --image-project debian-cloud \
-  --tags network-lb-tag \
-  --metadata startup-script="#! / bin / bash
-    apt-get update
-    apt-get install -y nginx
-    service nginx start"
-    
-gcloud compute target-pools add-instances $TARGET_POOL_NAME --instances $INSTANCE1_NAME,$INSTANCE2_NAME
 ```
 
 3. Create a managed instance group.
@@ -88,6 +71,7 @@ INSTANCE_GROUP_NAME="lb-backend-group"
 gcloud compute instance-groups managed create $INSTANCE_GROUP_NAME \
    --template=$INSTANCE_TEMPLATE_NAME --size=2
 ```
+
 
 4. Firewall rule Create a firewall rule named to allow traffic (TCP port 80)
 ```
