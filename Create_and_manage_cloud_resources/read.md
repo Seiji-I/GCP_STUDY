@@ -72,6 +72,9 @@ gcloud compute instance-groups managed create $INSTANCE_GROUP_NAME \
    --template=$INSTANCE_TEMPLATE_NAME --size=2
 ```
 
+### set these properties
+
+<img width="1440" alt="Screen Shot 2022-07-04 at 21 35 02" src="https://user-images.githubusercontent.com/108506612/177158630-8ae74307-8d57-4094-a48c-96fa0009febc.png">
 
 4. Firewall rule Create a firewall rule named to allow traffic (TCP port 80)
 ```
