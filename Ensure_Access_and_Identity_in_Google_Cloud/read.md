@@ -23,7 +23,7 @@ gcloud iam roles create $CUSTOM_ROLE_NAME --project $DEVSHELL_PROJECT_ID \
 --file role-definition.yaml
 ```
 
-#2. Create a service account
+# 2. Create a service account
 Define service account name and create it
 ```
 SERVICE_ACCOUNT_NAME=[SERVICE_ACCOUNT_NAME]
