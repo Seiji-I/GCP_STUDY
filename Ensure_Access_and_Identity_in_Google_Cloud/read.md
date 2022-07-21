@@ -1,5 +1,10 @@
 # 1. Create a custom security role
-first, create <b>role-definition.yaml</b> file
+First, create <b>role-definition.yaml</b> file
+
+```
+vi role-definition.yaml
+```
+Paste the code below and save this file
 ```
 title: my custom rule
 description: my custom rule description
@@ -11,7 +16,7 @@ includedPermissions:
 - storage.objects.update
 - storage.objects.create
 ```
-and then run this command to create a custom rule
+And then run this command to create a custom rule
 ```
 $CUSTOM_ROLE_NAME=[CUSTOM_ROLE_NAME]
 gcloud iam roles create $CUSTOM_ROLE_NAME --project $DEVSHELL_PROJECT_ID \
@@ -19,12 +24,12 @@ gcloud iam roles create $CUSTOM_ROLE_NAME --project $DEVSHELL_PROJECT_ID \
 ```
 
 #2. Create a service account
-define service account name and create it
+Define service account name and create it
 ```
 SERVICE_ACCOUNT_NAME=[SERVICE_ACCOUNT_NAME]
 gcloud iam service-accounts create $SERVICE_ACCOUNT_NAME --display-name "my service account"
 ```
-binding these roles to control minimal GKE
+Binding these roles to control minimal GKE
 - logging.logWriter
 - monitoring.metricWriter
 - monitoring.viewer
