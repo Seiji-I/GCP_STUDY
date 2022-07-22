@@ -63,3 +63,10 @@ gcloud container clusters create ***** \
     --service-account $SERVICE_ACCOUNT_NAME@$DEVSHELL_PROJECT_ID.iam.gserviceaccount.com 
     --zone *****
 ```
+
+```
+INTERNAL_IP_ADDRESS=***.***.***.***./32
+gcloud container clusters update ***** \
+    --enable-master-authorized-networks \
+    --master-authorized-networks $INTERNAL_IP_ADDRESS
+```
