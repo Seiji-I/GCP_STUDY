@@ -53,10 +53,10 @@ gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID \
 gcloud container clusters create orca-cluster-389 \
 	--zone ***** \
 	--network ***** \
-    --subnetwork ***** \
-    --enable-master-authorized-networks \
+	--subnetwork ***** \
+	--enable-master-authorized-networks \
 	--enable-ip-alias \
 	--master-ipv4-cidr 172.16.0.32/28 \
-    --enable-private-nodes \
-    --enable-private-endpoint
+	--enable-private-nodes \
+	--enable-private-endpoint
 ```
